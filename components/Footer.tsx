@@ -5,20 +5,32 @@ import RippleButton from "./RippleButton";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto" id="contact">
+    <footer
+      className="w-full pt-20 pb-10 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto"
+      id="contact"
+    >
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Got <span className="text-blue">more</span> questions?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help make your project
-          come to life.
+          Reach out to me today and let&apos;s discuss how I can help make your
+          project come to life.
         </p>
-        <a href="mailto:maitland.andrus@gmail.com">
+        <a
+        >
           <RippleButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
+            onClick={async () => {
+              try {
+                await navigator.clipboard.writeText("maitland.andrus@gmail.com");
+                alert("Email copied to clipboard!");
+              } catch (err) {
+                console.error("Failed to copy: ", err);
+              }
+            }}
           />
         </a>
       </div>
