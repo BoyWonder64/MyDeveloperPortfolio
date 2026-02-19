@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
 
-import { projects } from "@/data";
+import { myProjects as projects } from "../constants";
 import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
 import ProjectDetails from "@/components/ProjectDetails";
 
@@ -28,10 +28,11 @@ const RecentProjects = () => {
   return (
     <section className="py-20" id="projects">
       <h2 className="heading mb-8">
-        A small selection of <span className="text-purple">recent projects</span>
+        A small selection of{" "}
+        <span className="text-purple">recent projects</span>
       </h2>
       <div className="mt-10">
-        <ScrollStack 
+        <ScrollStack
           className="w-full"
           itemDistance={120}
           itemScale={0.06}
@@ -43,27 +44,27 @@ const RecentProjects = () => {
           blurAmount={0.7}
         >
           {projects.map((item) => (
-            <ScrollStackItem 
+            <ScrollStackItem
               key={item.id}
               itemClassName="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm border border-gray-700/50 shadow-2xl"
             >
-              <Project 
+              <Project
                 title={item.title}
-                description={item.des}
-                href={item.link}
-                image={item.img}
-                tags={item.iconLists.map((icon, index) => ({ id: index, name: icon.split('/').pop()?.replace('.svg','') || '', path: icon }))}
+                description={item.description}
+                href={item.href}
+                image={item.image}
+                tags={item.tags}
                 setPreview={() => {}}
-                subDescription={[]}
+                subDescription={item.subDescription || []}
               />
             </ScrollStackItem>
           ))}
         </ScrollStack>
       </div>
       <div className="flex justify-center mt-12">
-        <a 
-          href="https://github.com/BoyWonder64" 
-          target="_blank" 
+        <a
+          href="https://github.com/BoyWonder64"
+          target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full transition-all duration-300 hover:from-purple-700 hover:to-blue-700 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25 animate-fadeIn"
           aria-label="Visit GitHub for More Projects"
