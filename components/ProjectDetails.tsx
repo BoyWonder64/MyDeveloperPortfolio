@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface Tag {
   id: string | number;
@@ -12,6 +12,7 @@ interface ProjectDetailsProps {
   description: string;
   subDescription: string[];
   image: string;
+  images?: string[];
   tags: Tag[];
   href?: string;
   closeModal: () => void;
@@ -22,10 +23,25 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   description,
   subDescription,
   image,
+  images,
   tags,
   href,
   closeModal,
 }) => {
+  const projectImages = images?.length ? images : [image];
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const activeImage = projectImages[activeImageIndex];
+
+  useEffect(() => {
+    if (projectImages.length < 2) return;
+
+    const interval = window.setInterval(() => {
+      setActiveImageIndex((index) => (index + 1) % projectImages.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [images, image]);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
       <motion.div
@@ -39,7 +55,17 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
         >
           <img src="assets/close.svg" className="w-6 h-6" />
         </button>
-        <img src={image} alt={title} className="w-full rounded-t-2xl" />
+        <div className="flex h-[32vh] w-full items-center justify-center overflow-hidden rounded-t-2xl bg-black/10">
+          <motion.img
+            key={activeImage}
+            src={activeImage}
+            alt={title}
+            className="h-full w-full object-contain"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          />
+        </div>
         <div className="p-5">
           <h5 className="mb-2 text-2xl font-bold text-white">{title}</h5>
           <p className="mb-3 font-normal text-neutral-400">{description}</p>
