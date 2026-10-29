@@ -83,7 +83,7 @@ const Hero = () => {
 
             <div className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-8 mb-6 animate-fadeIn">
               <VariableProximity
-                label="Full-stack MERN developer crafting enterprise software. Proficent in C#, Java, React, Angular and sometimes Perl."
+                label="I am a Software Developer! I'm Proficent in C, C++, C#, Java, JavaScript, React, Angular and sometimes Perl."
                 fromFontVariationSettings="'wght' 400, 'opsz' 9"
                 toFontVariationSettings="'wght' 700, 'opsz' 40"
                 containerRef={containerRef}
