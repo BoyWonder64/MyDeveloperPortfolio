@@ -98,7 +98,7 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Full-Stack Software Developer - IBR",
+    title: "Software Developer - IBR",
     desc: "Developed and maintain Incident Based Reporting in Java, C#, and C, deployed via Maven packages and podman containers.Contributed to an Azure-hosted system for compliance ensuring validation for Federal NIBRS and State report collection.",
     className: "md:col-span-2",
     thumbnail: "/pcPixel.png",
