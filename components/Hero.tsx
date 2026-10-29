@@ -95,7 +95,7 @@ const Hero = () => {
 
             <div className="flex justify-center md:justify-start gap-4 animate-fadeIn">
               <a
-                href="https://drive.google.com/file/d/19BJUcxj8TWNJtZW0AaeBm51NQh7XAxYX/view?usp=sharing"
+                href="https://drive.google.com/file/d/1Wr9jPULOPjIJDWCyMffBu1kB-PuwRdor/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >

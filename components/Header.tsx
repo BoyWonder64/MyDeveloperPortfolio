@@ -17,7 +17,7 @@ export default function Header() {
     >
       {/* Logo */}
       <a
-        href="https://drive.google.com/file/d/19BJUcxj8TWNJtZW0AaeBm51NQh7XAxYX/view?usp=sharing"
+        href="https://drive.google.com/file/d/1Wr9jPULOPjIJDWCyMffBu1kB-PuwRdor/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-3 cursor-pointer"
