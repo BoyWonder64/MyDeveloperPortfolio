@@ -67,7 +67,7 @@ export const myProjects: MyProject[] = [
     subDescription: [
       "Built with Next.js, Prisma, Tailwind CSS, a simple application that allows us to to manage our calendar. The main idea is for small businesses to easily manage their time..",
     ],
-    href: "https://github.com/BoyWonder64/Shift-Up",
+    href: "https://github.com/BoyWonder64/ShiftUp",
     logo: "",
     image: "/assets/projects/ShiftUp.png",
     tags: [
